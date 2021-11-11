@@ -26,7 +26,7 @@ export default class QueueService {
     let nextInQueue = null;
     let nextId = null;
 
-    await this.storage.remove(doctorId);
+    await this.storage.remove(doctorId); //можно объеденить в один метод со следующим
 
     const isStorageEmpty = await this.storage.isEmpty(doctorId);
 

@@ -19,8 +19,8 @@ router
   .route('/me')
   .get(
     asyncHandler(verifyToken),
-    setDoctorIdFromUserId,
-    asyncHandler(getDoctorById),
+    setDoctorIdFromUserId, //обращаешься к базе => doctor по userId
+    asyncHandler(getDoctorById),// и опять по id
   );
 
 router

@@ -1,6 +1,6 @@
 import userService from './index.js';
 
-export const setUserIdFromReq = async (req, res, next) => {
+export const setUserIdFromReq = async (req, res, next) => {//зачем перекидывать id из одного поля в другое
   if (req.user.id) {
     req.params.userId = req.user.id;
   }
@@ -8,7 +8,7 @@ export const setUserIdFromReq = async (req, res, next) => {
 };
 
 export const getById = async (req, res, next) => {
-  const user = await userService.getUserById(req.params.userId);
+  const user = await userService.getUserById(req.params.userId);//здесь можно сразу взять его из req.user.id
 
   delete user.password;
 

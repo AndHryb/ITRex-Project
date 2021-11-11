@@ -61,10 +61,10 @@ export default class UserService {
       email: data.email,
     };
 
-    const user = await this.repository.createUser(userData);
+    const user = await this.repository.createUser(userData);// лучше заключить в один метод в репозитории в транзакцию
     patientData.user_id = user.id;
 
-    await this.patientService.addPatient(patientData);
+    await this.patientService.addPatient(patientData); // вместе с этим методом
   };
 
   getUserByEmail = async (email) => {

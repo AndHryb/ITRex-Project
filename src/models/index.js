@@ -12,7 +12,7 @@ const {
   db: { mysql },
 } = config;
 
-const sequelize = new Sequelize(mysql.db, mysql.user, mysql.password, {
+const sequelize = new Sequelize(mysql.db, mysql.user, ''/*mysql.password*/, {
   host: mysql.host,
   dialect: mysql.dialect,
   port: mysql.port,
